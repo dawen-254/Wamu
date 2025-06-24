@@ -22,9 +22,9 @@ export default function App() {
   ];
 
   const plans = [
-    { name: "Hourly Pass", price: "$3/hour", features: ["1-hour access", "Free WiFi", "Basic PC use"] },
-    { name: "Daily Pass", price: "$15/day", features: ["Unlimited daily use", "Premium gaming stations", "Printing credit included"] },
-    { name: "Monthly Membership", price: "$80/month", features: ["24/7 access", "Exclusive discounts", "VIP lounge area"] },
+    { name: "Hourly Pass", price: "Ksh 50/hour", features: ["1-hour access", "Free WiFi", "Basic PC use"] },
+    { name: "Daily Pass", price: "Ksh 300/day", features: ["Unlimited daily use", "Premium gaming stations", "Printing credit included"] },
+    { name: "Monthly Membership", price: "Ksh 2000/month", features: ["24/7 access", "Exclusive discounts", "VIP lounge area"] },
   ];
 
   const testimonials = [
@@ -88,11 +88,11 @@ export default function App() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-[url('https://placehold.co/1600x900')]  opacity-10 bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('/cafe1.png')]  opacity-10 bg-cover bg-center"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Experience the Future of Gaming & Work</h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-6">Join WAMU today and enjoy high-speed internet, premium gaming setups, and a modern co-working space.</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Experience the Future of technology & Work</h2>
+            <p className="text-lg md:text-xl text-gray-300 mb-6">Join WAMU today and enjoy high-speed internet, premium  setups, and a modern co-working space.</p>
             <div className="flex gap-4">
               <button onClick={() => scrollToSection(bookingRef)} className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg">
                 Book Now
@@ -110,7 +110,7 @@ export default function App() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <img src="https://placehold.co/600x400"  alt="WAMU Cafe Interior" className="rounded-lg shadow-xl" />
+              <img src="/cafe.png"  alt="WAMU Cafe Interior" className="rounded-lg shadow-xl" />
             </div>
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">About WAMU</h2>
@@ -226,9 +226,9 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-              <p className="text-gray-300 mb-2"><strong>Address:</strong> 123 Cyber Lane, Tech City</p>
-              <p className="text-gray-300 mb-2"><strong>Email:</strong> info@wamu.cafe</p>
-              <p className="text-gray-300 mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
+              <p className="text-gray-300 mb-2"><strong>Address:</strong> Mlolongo, Behind Co-operative Bank</p>
+              <p className="text-gray-300 mb-2"><strong>Email:</strong> wamubrands2@gmail.com</p>
+              <p className="text-gray-300 mb-2"><strong>Phone:</strong> +254 706 865824</p>
               <div className="mt-6 flex space-x-4">
                 <a href="#" className="text-blue-400 hover:text-blue-300 transition">
                   <span className="sr-only">Facebook</span>
