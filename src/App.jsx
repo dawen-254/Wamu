@@ -29,21 +29,21 @@ export default function App() {
 
   const testimonials = [
     {
-      name: "Alex R.",
+      name: "Alex ",
       role: "Student",
-      content: "WAMU has become my second home. The environment is super chill and the internet speed is unmatched!",
+      content: "WAMU BRANDS has become my second home. The environment is super chill and the internet speed is unmatched!",
       avatar: "https://placehold.co/100x100" 
     },
     {
-      name: "Jamie T.",
+      name: "Jamie ",
       role: "Remote Developer",
       content: "I come here to focus on work. The setup is clean, ergonomic, and perfect for long hours.",
       avatar: "https://placehold.co/100x100" 
     },
     {
-      name: "Morgan L.",
-      role: "Casual Gamer",
-      content: "Loved the gaming zone! Great hardware and a fun crowd. Highly recommend booking a session.",
+      name: "Morgan .",
+      role: "Casual Customer",
+      content: "Loved the services they offerd. Great hardware and a good costomer service. Highly recommend booking a session.",
       avatar: "https://placehold.co/100x100" 
     }
   ];
@@ -53,7 +53,7 @@ export default function App() {
       {/* Header */}
       <header className="bg-gray-800 shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">WAMU</h1>
+          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">WAMU BRANDS</h1>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
@@ -92,7 +92,7 @@ export default function App() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-xl">
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Experience the Future of technology & Work</h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-6">Join WAMU today and enjoy high-speed internet, premium  setups, and a modern co-working space.</p>
+            <p className="text-lg md:text-xl text-gray-300 mb-6">Join WAMU BRANDS today and enjoy high-speed internet, premium  setups, and a modern co-working space.</p>
             <div className="flex gap-4">
               <button onClick={() => scrollToSection(bookingRef)} className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg">
                 Book Now
@@ -110,11 +110,11 @@ export default function App() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <img src="/cafe.png"  alt="WAMU Cafe Interior" className="rounded-lg shadow-xl" />
+              <img src="/cafe2.png"  alt="WAMU Cafe Interior" className="rounded-lg shadow-xl" />
             </div>
             <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">About WAMU</h2>
-              <p className="text-gray-300 mb-4">WAMU is more than just a cyber cafe — it's your hub for productivity, entertainment, and community. Whether you're a student needing a quiet place to study, a gamer looking for the latest rigs, or a professional needing a reliable workspace, we've got you covered.</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">About WAMU BRANDS</h2>
+              <p className="text-gray-300 mb-4">WAMU BRANDS is more than just a cyber cafe — it's your hub for productivity, entertainment, and community. Whether you're a student needing a quiet place to study, a gamer looking for the latest rigs, or a professional needing a reliable workspace, we've got you covered.</p>
               <p className="text-gray-300">Our mission is to provide an inclusive, modern, and tech-forward environment where people can connect, create, and compete in comfort.</p>
             </div>
           </div>
@@ -270,7 +270,7 @@ export default function App() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h4 className="text-white font-semibold mb-4">WAMU</h4>
+              <h4 className="text-white font-semibold mb-4">WAMU BRANDS</h4>
               <p className="text-sm">Modern cyber cafe for gamers, workers, and students. Experience the future today.</p>
             </div>
             <div>
@@ -287,8 +287,8 @@ export default function App() {
             <div>
               <h4 className="text-white font-semibold mb-4">Opening Hours</h4>
               <ul className="space-y-2 text-sm">
-                <li>Mon - Fri: 8am - 10pm</li>
-                <li>Sat - Sun: 10am - 11pm</li>
+                <li>Mon - Sat: 8am - 10pm</li>
+                <li>Sun: 10am - 11pm</li>
               </ul>
             </div>
             <div>
@@ -302,7 +302,7 @@ export default function App() {
           </div>
           <hr className="my-8 border-gray-700" />
           <div className="text-center text-sm">
-            &copy; {new Date().getFullYear()} WAMU Cyber Cafe. All rights reserved.
+            &copy; {new Date().getFullYear()} WAMU BRANDS Cyber Cafe. All rights reserved.
           </div>
         </div>
       </footer>
