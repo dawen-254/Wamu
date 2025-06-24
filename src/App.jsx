@@ -53,7 +53,7 @@ export default function App() {
       {/* Header */}
       <header className="bg-gray-800 shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">WAMU BRANDS</h1>
+          <h1 className="text-s font-italics text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">WAMU BRANDS</h1>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
