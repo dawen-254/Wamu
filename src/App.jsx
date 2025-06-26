@@ -165,35 +165,81 @@ export default function App() {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Book Your Session</h2>
           <div className="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-xl">
-            <form className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
-                <input type="text" required className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                <input type="email" required className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
-                <input type="tel" required className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">Session Type</label>
-                <select className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <option>Hourly Pass</option>
-                  <option>Daily Pass</option>
-                  <option>Monthly Membership</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">Preferred Date & Time</label>
-                <input type="datetime-local" required className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              </div>
-              <button type="submit" className="w-full py-3 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition transform hover:scale-105">
-                Confirm Booking
-              </button>
-            </form>
+            <form
+  className="space-y-6"
+  onSubmit={(e) => {
+    e.preventDefault();
+
+    const name = e.target.fullname.value;
+    const email = e.target.email.value;
+    const phone = e.target.phone.value;
+    const session = e.target.session.value;
+    const datetime = e.target.datetime.value;
+    const whatsappNumber = "254797537766"; // Your WhatsApp number (no +)
+
+    const message = `Hello, I'd like to make a booking.\n\nFull Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSession Type: ${session}\nPreferred Date & Time: ${datetime}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  }}
+>
+  <div>
+    <label className="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+    <input
+      type="text"
+      name="fullname"
+      required
+      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+    <input
+      type="email"
+      name="email"
+      required
+      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
+    <input
+      type="tel"
+      name="phone"
+      required
+      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-300 mb-1">Session Type</label>
+    <select
+      name="session"
+      required
+      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      <option>Hourly Pass</option>
+      <option>Daily Pass</option>
+      <option>Monthly Membership</option>
+    </select>
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-300 mb-1">Preferred Date & Time</label>
+    <input
+      type="datetime-local"
+      name="datetime"
+      required
+      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+  <button
+    type="submit"
+    className="w-full py-3 bg-green-600 hover:bg-green-500 rounded-lg font-semibold transition transform hover:scale-105"
+  >
+    Confirm
+  </button>
+</form>
+
           </div>
         </div>
       </section>
@@ -252,14 +298,51 @@ export default function App() {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">Send Us a Message</h3>
-              <form className="space-y-4">
-                <input type="text" placeholder="Your Name" className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none" />
-                <input type="email" placeholder="Your Email" className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none" />
-                <textarea rows="5" placeholder="Your Message" className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none"></textarea>
-                <button type="submit" className="w-full py-2 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition">
-                  Send Message
-                </button>
-              </form>
+              <form
+  className="space-y-4"
+  onSubmit={(e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+    const phoneNumber = "254797537766"; // Your WhatsApp number (no +)
+
+    const whatsappMessage = `Hello, my name is ${name}. My email is ${email}. Here is my message: ${message}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  }}
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+    className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none"
+  />
+  <textarea
+    name="message"
+    rows="5"
+    placeholder="Your Message"
+    required
+    className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none"
+  ></textarea>
+  <button
+    type="submit"
+    className="w-full py-2 bg-green-600 hover:bg-green-500 rounded-lg font-semibold transition"
+  >
+    SUBMIT
+  </button>
+</form>
+
             </div>
           </div>
         </div>
