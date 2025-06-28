@@ -175,7 +175,7 @@ export default function App() {
     const phone = e.target.phone.value;
     const session = e.target.session.value;
     const datetime = e.target.datetime.value;
-    const whatsappNumber = "254797537766"; // Your WhatsApp number (no +)
+    const whatsappNumber = "254706865824"; // Your WhatsApp number (no +)
 
     const message = `Hello, I'd like to make a booking.\n\nFull Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSession Type: ${session}\nPreferred Date & Time: ${datetime}`;
     const encodedMessage = encodeURIComponent(message);
