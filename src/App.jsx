@@ -109,7 +109,7 @@ export default function App() {
     setSelectedFile(e.target.files[0]);
   };
 
-  const handleFileSubmit = (e) => {
+ const handleFileSubmit = (e) => {
     e.preventDefault();
     if (!selectedFile) return;
     const whatsappNumber = "254797537766";
@@ -117,6 +117,20 @@ export default function App() {
     const encodedMessage = encodeURIComponent(message);
     alert(`File "${selectedFile.name}" would be sent to WhatsApp number ${whatsappNumber} with message: ${message}`);
   };
+  /*const handleFileSubmit = (e) => {
+  e.preventDefault();
+  
+  const fileName = selectedFile?.name || 'No file selected';
+  const phoneNumber = "+254797537766"; // Your business WhatsApp number
+  const contact = e.target[1].value;
+  const instructions = e.target[2].value;
+
+  const message = `Hi, I have uploaded a file.\n\nFile: ${fileName}\nContact: ${contact}\nInstructions: ${instructions}`;
+  const encodedMessage = encodeURIComponent(message);
+
+  window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+};*/
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white font-sans">
