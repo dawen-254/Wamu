@@ -480,7 +480,7 @@ export default function App() {
                 const phone = e.target.phone.value;
                 const session = e.target.session.value;
                 const datetime = e.target.datetime.value;
-                const whatsappNumber = "254797537766";
+                const whatsappNumber = "254706865824";
                 const message = `Hello, I'd like to make a booking.
 Full Name: ${name}
 Email: ${email}
