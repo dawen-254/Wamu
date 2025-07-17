@@ -4,6 +4,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [activeTab, setActiveTab] = useState('home');
+  const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const pricingRef = useRef(null);
@@ -19,8 +20,8 @@ export default function App() {
 
   const services = [
     { 
-      name: "High-Speed Internet", 
-      description: "Fast and stable internet connection for browsing, streaming, or working.", 
+      name: "Graphic and Web Design", 
+      description: "Custom logos, websites, and digital branding solutions tailored to your business needs.", 
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.5C9.5 19.5 7.43 17.93 6.5 15.5H17.5C16.57 17.93 14.5 19.5 12 19.5ZM12 13.5C14.5 13.5 16.57 15.07 17.5 17.5H6.5C7.43 15.07 9.5 13.5 12 13.5Z" fill="currentColor" />
@@ -96,12 +97,12 @@ export default function App() {
   ];
 
   const galleryImages = [
-    { id: 1, src: "/gallery1.jpg", alt: "Cafe interior" },
-    { id: 2, src: "/gallery2.jpg", alt: "Work stations" },
-    { id: 3, src: "/gallery3.jpg", alt: "Branding samples" },
-    { id: 4, src: "/gallery4.jpg", alt: "Printing services" },
-    { id: 5, src: "/gallery5.jpg", alt: "Comfortable seating" },
-    { id: 6, src: "/gallery6.jpg", alt: "Happy customers" },
+    { id: 1, src: "/gal1.jpg", alt: "Graphic Design" },
+    { id: 2, src: "/gal2.jpg", alt: "Happy Customer" },
+    { id: 3, src: "/gal3.jpg", alt: "Branding samples" },
+    { id: 4, src: "/gal4.jpg", alt: "Printing services" },
+    { id: 5, src: "/gal5.jpg", alt: "T-shirt Branding" },
+    { id: 6, src: "/gal6.jpg", alt: "T-shirt Branding" },
   ];
 
   const handleFileChange = (e) => {
@@ -124,7 +125,7 @@ export default function App() {
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
           <div className="flex items-center">
             <img 
-              src="/logo.png" 
+              src="/logo.jpg" 
               alt="WAMU BRANDS Logo" 
               className="h-12 w-12 mr-3 rounded-full border-2 border-white"
             />
@@ -136,7 +137,7 @@ export default function App() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-6">
             <button 
-              onClick={() => scrollToSection(document.getElementById('home'), 'home')} 
+              onClick={() => scrollToSection(homeRef, 'home')} 
               className={`capitalize hover:text-yellow-300 transition duration-300 font-medium ${activeTab === 'home' ? 'text-yellow-300' : ''}`}
             >
               Home
@@ -190,7 +191,7 @@ export default function App() {
           <div className="lg:hidden bg-blue-900 p-4 animate-fadeIn">
             <div className="grid grid-cols-2 gap-2">
               <button 
-                onClick={() => scrollToSection(document.getElementById('home'), 'home')} 
+                onClick={() => scrollToSection(homeRef, 'home')} 
                 className="bg-blue-800 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition"
               >
                 Home
@@ -231,8 +232,8 @@ export default function App() {
       </header>
       
       {/* Hero Section */}
-      <section id="home" className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-[url('https://placehold.co/1920x1080 ')] opacity-10 bg-cover bg-center"></div>
+      <section ref={homeRef} id="home" className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 min-h-screen flex items-center">
+        <div className="absolute inset-0 bg-[url('/home.jpg')] opacity-5 bg-cover bg-center"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-yellow-300">
@@ -244,13 +245,13 @@ export default function App() {
             <div className="flex flex-wrap gap-4">
               <button 
                 onClick={() => scrollToSection(bookingRef, 'booking')} 
-                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 rounded-xl font-bold transition transform hover:scale-105 shadow-lg"
+                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-white-900 rounded-xl font-bold transition transform hover:scale-105 shadow-lg"
               >
                 Book Now
               </button>
               <button 
                 onClick={() => scrollToSection(servicesRef, 'services')} 
-                className="px-8 py-4 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 rounded-xl font-bold transition transform hover:scale-105"
+                className="px-8 py-4 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-white-900 rounded-xl font-bold transition transform hover:scale-105"
               >
                 Our Services
               </button>
@@ -265,9 +266,9 @@ export default function App() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-purple-500 rounded-2xl opacity-75 group-hover:opacity-100 blur transition duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
                 <img 
-                  src="https://placehold.co/600x400 " 
+                  src="/about.jpg " 
                   alt="WAMU BRANDS Interior" 
                   className="rounded-2xl shadow-2xl border-4 border-yellow-400 transform group-hover:scale-105 transition duration-500"
                 />
@@ -288,13 +289,13 @@ export default function App() {
               <div className="flex gap-4">
                 <button 
                   onClick={() => scrollToSection(servicesRef, 'services')} 
-                  className="px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-900 rounded-lg font-semibold transition"
+                  className="px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-white-900 rounded-lg font-semibold transition"
                 >
                   Our Services
                 </button>
                 <button 
                   onClick={() => scrollToSection(galleryRef, 'gallery')} 
-                  className="px-6 py-3 border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 rounded-lg font-semibold transition"
+                  className="px-6 py-3 border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-white-900 rounded-lg font-semibold transition"
                 >
                   View Gallery
                 </button>
@@ -412,7 +413,7 @@ export default function App() {
               </div>
               <button
                 type="submit"
-                className="w-full py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-900 rounded-lg font-bold transition transform hover:scale-105"
+                className="w-full py-3 bg-yellow-500 hover:bg-yellow-400 text-white-900 rounded-lg font-bold transition transform hover:scale-105"
               >
                 Send via WhatsApp
               </button>
@@ -450,7 +451,7 @@ export default function App() {
                 </ul>
                 <button 
                   onClick={() => scrollToSection(bookingRef, 'booking')} 
-                  className={`w-full py-3 rounded-lg font-semibold transition ${index === 1 ? 'bg-yellow-500 hover:bg-yellow-400 text-gray-900' : 'bg-gray-700 hover:bg-gray-600 text-white'}`}
+                  className={`w-full py-3 rounded-lg font-semibold transition ${index === 1 ? 'bg-yellow-500 hover:bg-yellow-400 text-white-900' : 'bg-white-700 hover:bg-gray-600 text-white'}`}
                 >
                   Choose Plan
                 </button>
@@ -479,7 +480,7 @@ export default function App() {
                 const phone = e.target.phone.value;
                 const session = e.target.session.value;
                 const datetime = e.target.datetime.value;
-                const whatsappNumber = "254706865824";
+                const whatsappNumber = "254797537766";
                 const message = `Hello, I'd like to make a booking.
 Full Name: ${name}
 Email: ${email}
@@ -555,7 +556,7 @@ Preferred Date & Time: ${datetime}`;
               </div>
               <button
                 type="submit"
-                className="w-full py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-900 rounded-lg font-bold transition transform hover:scale-105"
+                className="w-full py-3 bg-yellow-500 hover:bg-yellow-400 text-white-900 rounded-lg font-bold transition transform hover:scale-105"
               >
                 Confirm Booking via WhatsApp
               </button>
@@ -726,7 +727,7 @@ Preferred Date & Time: ${datetime}`;
             <div>
               <div className="flex items-center mb-4">
                 <img 
-                  src="/logo.png" 
+                  src="/logo.jpg" 
                   alt="WAMU BRANDS Logo" 
                   className="h-8 w-8 mr-2 rounded-full border-2 border-white"
                 />
@@ -813,10 +814,10 @@ Preferred Date & Time: ${datetime}`;
               <h3 className="text-lg font-semibold mb-4 text-yellow-300">Services</h3>
               <ul className="space-y-2">
                 <li className="text-gray-300">Branding Services</li>
-                <li className="text-gray-300">High-Speed Internet</li>
+                <li className="text-gray-300">Graphic and Web Design</li>
                 <li className="text-gray-300">Printing Services</li>
                 <li className="text-gray-300">Work & Study Zones</li>
-                <li className="text-gray-300">File Upload & Design</li>
+                <li className="text-gray-300">High Speed Internet</li>
               </ul>
             </div>
             <div>
