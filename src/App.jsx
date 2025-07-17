@@ -112,7 +112,7 @@ export default function App() {
   const handleFileSubmit = (e) => {
     e.preventDefault();
     if (!selectedFile) return;
-    const whatsappNumber = "254706865824";
+    const whatsappNumber = "254797537766";
     const message = "I'd like to submit this file for printing/branding services";
     const encodedMessage = encodeURIComponent(message);
     alert(`File "${selectedFile.name}" would be sent to WhatsApp number ${whatsappNumber} with message: ${message}`);
